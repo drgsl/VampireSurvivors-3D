@@ -23,6 +23,10 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
     public int XP { get; set; }
     public int XPToNextLevel { get; set; }
 
+    // UI Manager
+    public UI_Manager UI;
+
+
     // Monobehaviour
     private void Awake()
     {
@@ -46,6 +50,10 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         Level = 1;
         XP = 0;
         XPToNextLevel = 100;
+
+        // UI Manager
+        // UI = UI_Manager.Instance;
+        // UI.initSlider(XPToNextLevel, "LV" + Level, XP);
     }
     private void Update()
     {
