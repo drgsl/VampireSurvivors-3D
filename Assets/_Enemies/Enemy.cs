@@ -62,6 +62,10 @@ public abstract class Enemy : MonoBehaviour, IHealth
     }
     public void Die()
     {
+        XP_PointData xp = data.XP_Drops[Random.Range(0, data.XP_Drops.Count)];
+        GameObject xpObj = XP_Point.GetXP(xp);
+        xpObj.transform.position = transform.position;
+        
         EnemyManager.RestartEnemy(this);
     }
 }

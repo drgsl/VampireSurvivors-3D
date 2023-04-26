@@ -19,4 +19,5 @@ MonoBehaviour:
   Speed: 4
   MaxHealth: 10
   DropChance: 0
-  drop: {fileID: 0}
+  XP_Drops:
+  - {fileID: 11400000, guid: d84e98e8fd667f349bb3e7e7a0db4957, type: 2}

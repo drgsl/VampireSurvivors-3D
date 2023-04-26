@@ -7,4 +7,6 @@ public class XP_PointData : ScriptableObject
 {
     public Sprite Icon;
     public int XP;
+
+    public Color Color;
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IWeaponHolder, IHealth
+public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
 {
     // Singleton
     public static Player Instance { get; private set; }
@@ -17,6 +17,11 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth
     // IWeaponHolder
     public Weapon CurrentWeapon { get; set; }
     public List<Weapon> Weapons { get; set; }
+
+    // ILevelable
+    public int Level { get; set; }
+    public int XP { get; set; }
+    public int XPToNextLevel { get; set; }
 
     // Monobehaviour
     private void Awake()
@@ -36,6 +41,11 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth
         Weapons = new List<Weapon>();
         Weapons.AddRange(GetComponentsInChildren<Weapon>());
         EquipWeapon(Weapons[0]);
+
+        // ILevelable
+        Level = 1;
+        XP = 0;
+        XPToNextLevel = 100;
     }
     private void Update()
     {
@@ -68,6 +78,22 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth
         Invincible = false;
     }
 
+    // ILevelable
+    public void AddXP(int amount)
+    {
+        XP += amount;
+        if (XP >= XPToNextLevel)
+        {
+            LevelUp();
+        }
+    }
+    public void LevelUp()
+    {
+        Level++;
+        XP = 0;
+        XPToNextLevel = XPToNextLevel * 2;
+        print("Player leveled up to " + Level);
+    }
     // IHealth
     public void TakeDamage(int damage)
     {

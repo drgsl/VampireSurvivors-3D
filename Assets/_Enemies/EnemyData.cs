@@ -16,5 +16,13 @@ public class EnemyData : ScriptableObject
     public int MaxHealth;
 
     public int DropChance;
-    public GameObject drop;
+    // public GameObject drop;
+
+    public List<XP_PointData> XP_Drops;
+}
+
+public struct XP_DropWeighted
+{
+    public XP_PointData data;
+    public int Chance;
 }

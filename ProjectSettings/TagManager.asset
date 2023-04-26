@@ -6,11 +6,12 @@ TagManager:
   tags:
   - DamageEnemy
   - DamagePlayer
+  - XP
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NotWalkable
   - Water
   - UI
   - 
