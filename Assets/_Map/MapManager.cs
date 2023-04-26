@@ -22,6 +22,7 @@ public class MapManager : MonoBehaviour
     public void Start()
     {
         player = Player.Instance.transform;
+        Tiles = new List<Tile>();
         GenerateMapAround(player.position);
     }
 

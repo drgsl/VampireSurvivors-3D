@@ -15,5 +15,5 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Name: Pasqualina Belpaese
   MaxHealth: 100
-  InvincibilityPeriod: 5
+  InvincibilityPeriod: 0.5
   Speed: 0

@@ -23,9 +23,6 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
     public int XP { get; set; }
     public int XPToNextLevel { get; set; }
 
-    // UI Manager
-    public UI_Manager UI;
-
 
     // Monobehaviour
     private void Awake()
@@ -50,11 +47,14 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         Level = 1;
         XP = 0;
         XPToNextLevel = 100;
-
-        // UI Manager
-        // UI = UI_Manager.Instance;
-        // UI.initSlider(XPToNextLevel, "LV" + Level, XP);
     }
+    private void Start()
+    {
+        // UI
+        GameUI_Manager.updateLevelBar(XP, XPToNextLevel, Level);
+        GameUI_Manager.updateHealthBar(Health, MaxHealth);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -90,6 +90,7 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
     public void AddXP(int amount)
     {
         XP += amount;
+        GameUI_Manager.updateLevelBar(XP, XPToNextLevel, Level);
         if (XP >= XPToNextLevel)
         {
             LevelUp();
@@ -100,13 +101,13 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         Level++;
         XP = 0;
         XPToNextLevel = XPToNextLevel * 2;
-        print("Player leveled up to " + Level);
+        GameUI_Manager.updateLevelBar(XP, XPToNextLevel, Level);
     }
     // IHealth
     public void TakeDamage(int damage)
     {
-        Debug.Log("Player took damage " + damage);
         Health -= damage;
+        GameUI_Manager.updateHealthBar(Health, MaxHealth);
         if (Health <= 0)
         {
             Die();
@@ -119,10 +120,11 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         {
             Health = MaxHealth;
         }
+        GameUI_Manager.updateHealthBar(Health, MaxHealth);
     }
     public void Die()
     {
-        Debug.Log("Player died");
+        GameUI_Manager.showDeathScreen();
     }
 
     // IWeaponHolder

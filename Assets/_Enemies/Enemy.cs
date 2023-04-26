@@ -31,7 +31,7 @@ public abstract class Enemy : MonoBehaviour, IHealth
         {
             TakeDamage(Player.Instance.CurrentWeapon.data.BaseDamage);
 
-            StartCoroutine(Invincibility(Player.Instance.CurrentWeapon.data.DelaySeconds));
+            StartCoroutine(Invincibility(data.InvincibilityPeriod));
         }
     }
 
@@ -45,7 +45,6 @@ public abstract class Enemy : MonoBehaviour, IHealth
     // IHealth
     public void TakeDamage(int damage)
     {
-        Debug.Log("Enemy took damage " + damage);
         Health -= damage;
         if (Health <= 0)
         {

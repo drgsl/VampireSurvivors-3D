@@ -12,6 +12,7 @@ public class EnemyData : ScriptableObject
 
     public int BaseDamage;
     public int Speed;
+    public float InvincibilityPeriod = 0.5f;
 
     public int MaxHealth;
 
