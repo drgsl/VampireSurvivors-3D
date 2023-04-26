@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518ee3bad5630f34480bad97d67a5010, type: 3}
+  m_Name: SkeletonData
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 5565898528350544552, guid: 3cd57f52440497e479f6d9b3ddaa356b, type: 3}
+  Icon: {fileID: 0}
+  Name: Skeleton
+  BaseDamage: 5
+  Speed: 4
+  MaxHealth: 10
+  DropChance: 0
+  drop: {fileID: 0}
