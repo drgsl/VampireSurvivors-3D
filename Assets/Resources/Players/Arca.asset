@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a65e8aca0e31f44c8bb3b083cc39d85, type: 3}
-  m_Name: Pasqualina
+  m_Name: Arca
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 8325d4ef0a6eb3d43952aff8a06d9f45, type: 3}
-  Name: Pasqualina Belpaese
-  MaxHealth: 100
+  Name: Arca
+  MaxHealth: 50
   InvincibilityPeriod: 0.5
   Speed: 0

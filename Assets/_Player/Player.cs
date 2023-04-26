@@ -34,6 +34,8 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         }
         Instance = this;
 
+        data = DataCarrier.ChosenPlayerData;
+
         // IHealth
         MaxHealth = data.MaxHealth;
         Health = MaxHealth;
