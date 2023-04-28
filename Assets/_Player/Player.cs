@@ -34,7 +34,10 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         }
         Instance = this;
 
-        data = DataCarrier.ChosenPlayerData;
+        if(DataCarrier.ChosenPlayerData != null)
+        {
+            data = DataCarrier.ChosenPlayerData;
+        }
 
         // IHealth
         MaxHealth = data.MaxHealth;
@@ -104,6 +107,7 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         XP = 0;
         XPToNextLevel = XPToNextLevel * 2;
         GameUI_Manager.updateLevelBar(XP, XPToNextLevel, Level);
+        UpgradesManager.ShowUpgradesPanel();
     }
     // IHealth
     public void TakeDamage(int damage)
@@ -122,6 +126,11 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         {
             Health = MaxHealth;
         }
+        GameUI_Manager.updateHealthBar(Health, MaxHealth);
+    }
+    public void IncreaseMaxHealth(int amount)
+    {
+        MaxHealth += amount;
         GameUI_Manager.updateHealthBar(Health, MaxHealth);
     }
     public void Die()
