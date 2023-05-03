@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour
             float randomZ = Random.Range(-spawnRadius, spawnRadius);
 
             Vector3 randomPosition = new Vector3(randomX, 0, randomZ) + spawnPoints[randomSpawnPoint].position;
-
+            
             GameObject enemy = Instantiate(enemyTypes[randomIndex].Prefab, 
             randomPosition, 
             Quaternion.identity, parent: spawnPoints[randomSpawnPoint]);

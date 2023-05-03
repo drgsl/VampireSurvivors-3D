@@ -53,7 +53,7 @@ public class Player : MonoBehaviour, IWeaponHolder, IHealth, ILevelable
         XP = 0;
         XPToNextLevel = 100;
     }
-    private void Start()
+     private void Start()
     {
         // UI
         GameUI_Manager.updateLevelBar(XP, XPToNextLevel, Level);

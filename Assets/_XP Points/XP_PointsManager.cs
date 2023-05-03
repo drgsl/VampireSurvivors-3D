@@ -27,6 +27,7 @@ public class XP_PointsManager : MonoBehaviour
 
             xp.gameObject.SetActive(true);
             xp.transform.position = position;
+            xp.transform.position = new Vector3(xp.transform.position.x, 0.5f, xp.transform.position.z);
             xp.Data = xpData;
             return;
         }
@@ -35,6 +36,7 @@ public class XP_PointsManager : MonoBehaviour
         XP_Point xpComp = newXP.GetComponent<XP_Point>();
         xpComp.Data = xpData;
         newXP.transform.position = position;
+        newXP.transform.position = new Vector3(newXP.transform.position.x, 0.5f, newXP.transform.position.z);
         instance.XP_Points.Add(xpComp);
     }
 

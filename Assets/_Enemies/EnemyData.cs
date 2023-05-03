@@ -20,6 +20,8 @@ public class EnemyData : ScriptableObject
     // public GameObject drop;
 
     public List<XP_PointData> XP_Drops;
+
+    public GameObject HalfPiece;
 }
 
 public struct XP_DropWeighted
