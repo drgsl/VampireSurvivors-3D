@@ -13,6 +13,19 @@ public abstract class Enemy : MonoBehaviour, IHealth
 
     private bool Invincible = false;
 
+
+    protected static bool EnemiesPaused = false;
+
+    public static void PauseAllEnemies()
+    {
+        EnemiesPaused = true;
+    }
+
+    public static void unPauseAllEnemies()
+    {
+        EnemiesPaused = false;
+    }
+
     protected void Start()
     {
         // IHealth

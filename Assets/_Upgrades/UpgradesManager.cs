@@ -33,12 +33,14 @@ public class UpgradesManager : MonoBehaviour
     public static void ShowUpgradesPanel()
     {
         UI_Manager.ShowCursor();
+        GameManager.Pause();
         Instance.UpgradesPanel.gameObject.SetActive(true);
     }
 
     public static void HideUpgradesPanel()
     {
         UI_Manager.HideCursor();
+        GameManager.Unpause();
         Instance.UpgradesPanel.gameObject.SetActive(false);
     }
 

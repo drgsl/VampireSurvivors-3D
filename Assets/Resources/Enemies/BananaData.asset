@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518ee3bad5630f34480bad97d67a5010, type: 3}
+  m_Name: BananaData
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2067034271545723403, guid: d95b3e12f741eb90ab1f763ae2050df8, type: 3}
+  Icon: {fileID: 0}
+  Name: Banana
+  BaseDamage: 5
+  Speed: 8
+  InvincibilityPeriod: 0.5
+  MaxHealth: 10
+  DropChance: 0
+  XP_Drops:
+  - {fileID: 11400000, guid: d84e98e8fd667f349bb3e7e7a0db4957, type: 2}
+  HalfPiece: {fileID: 0}

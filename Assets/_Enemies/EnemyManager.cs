@@ -13,7 +13,12 @@ public class EnemyManager : MonoBehaviour
 
     public float spawnDelay = 1f;
     public float spawnRadius = 1f;
-    public int maxEnemies = 10;
+
+    public int startingEnemiesCount = 5;
+    public int enemiesPerWave = 5;
+    public int waveDuration = 10;
+
+    static int maxEnemies = 10;
 
     private void Awake()
     {
@@ -22,7 +27,24 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
+        maxEnemies = startingEnemiesCount;
+
         StartCoroutine(SpawnEnemies());
+
+        StartCoroutine(EnemyWave());
+    }
+
+
+    // TODO Finish this
+    private IEnumerator EnemyWave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waveDuration);
+
+            maxEnemies += enemiesPerWave;
+            print("Wave: " + maxEnemies);
+        }
     }
 
     private IEnumerator SpawnEnemies()

@@ -18,7 +18,7 @@ public class EnemyFollower : Enemy
 
     protected void FixedUpdate()
     {
-        if(target == null)
+        if(target == null || EnemiesPaused)
         {
             return;
         }

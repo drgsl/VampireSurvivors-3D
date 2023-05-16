@@ -1534,7 +1534,7 @@ public class SUPERCharacterAIO : MonoBehaviour{
     #endif
     #endregion
     
-    public void PausePlayer(PauseModes pauseMode){
+    public void PausePlayer(PauseModes pauseMode = PauseModes.FreezeInPlace){
         controllerPaused = true;
         switch(pauseMode){
             case PauseModes.MakeKinematic:{
