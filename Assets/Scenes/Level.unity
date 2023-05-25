@@ -2741,6 +2741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646186839}
   - component: {fileID: 1646186840}
+  - component: {fileID: 1646186841}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -2784,16 +2785,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1b91ac492f1b39e18cf4453fc0c6216, type: 2}
   - {fileID: 11400000, guid: 21b9b18cd4ac29675a805ea3d1500f79, type: 2}
   spawnedEnemies: []
-  spawnPoints:
-  - {fileID: 778464058}
-  - {fileID: 1149043825}
-  - {fileID: 1822469428}
-  - {fileID: 1153655320}
-  spawnDelay: 0.5
+  spawnPoints: []
   spawnRadius: 20
+--- !u!114 &1646186841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646186838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479e1ccdbfe6f0180ad72d3fc6c699dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelay: 1
   startingEnemiesCount: 5
-  enemiesPerWave: 20
-  waveDuration: 5
+  enemiesPerWave: 5
+  waveDuration: 10
 --- !u!1 &1648242723
 GameObject:
   m_ObjectHideFlags: 0

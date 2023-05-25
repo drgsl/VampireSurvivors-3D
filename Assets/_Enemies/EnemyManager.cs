@@ -11,61 +11,34 @@ public class EnemyManager : MonoBehaviour
     public List <Enemy> spawnedEnemies;
     public List <Transform> spawnPoints;
 
-    public float spawnDelay = 1f;
     public float spawnRadius = 1f;
-
-    public int startingEnemiesCount = 5;
-    public int enemiesPerWave = 5;
-    public int waveDuration = 10;
-
-    static int maxEnemies = 10;
 
     private void Awake()
     {
         Instance = this;
-    }
 
-    private void Start()
-    {
-        maxEnemies = startingEnemiesCount;
-
-        StartCoroutine(SpawnEnemies());
-
-        StartCoroutine(EnemyWave());
-    }
-
-
-    // TODO Finish this
-    private IEnumerator EnemyWave()
-    {
-        while (true)
+        foreach (Transform child in transform)
         {
-            yield return new WaitForSeconds(waveDuration);
-
-            maxEnemies += enemiesPerWave;
-            print("Wave: " + maxEnemies);
+            spawnPoints.Add(child);
         }
     }
 
-    private IEnumerator SpawnEnemies()
+    public static void SpawnEnemy()
     {
-        while (spawnedEnemies.Count < maxEnemies)
-        {
-            int randomIndex = Random.Range(0, enemyTypes.Count);
-            int randomSpawnPoint = Random.Range(0, spawnPoints.Count);
+        int randomIndex = Random.Range(0, Instance.enemyTypes.Count);
+        int randomSpawnPoint = Random.Range(0, Instance.spawnPoints.Count);
 
-            float randomX = Random.Range(-spawnRadius, spawnRadius);
-            float randomZ = Random.Range(-spawnRadius, spawnRadius);
+        float randomX = Random.Range(-Instance.spawnRadius, Instance.spawnRadius);
+        float randomZ = Random.Range(-Instance.spawnRadius, Instance.spawnRadius);
 
-            Vector3 randomPosition = new Vector3(randomX, 0, randomZ) + spawnPoints[randomSpawnPoint].position;
-            
-            GameObject enemy = Instantiate(enemyTypes[randomIndex].Prefab, 
-            randomPosition, 
-            Quaternion.identity, parent: spawnPoints[randomSpawnPoint]);
-            
-            spawnedEnemies.Add(enemy.GetComponent<Enemy>());
-            yield return new WaitForSeconds(spawnDelay);
-        }
+        Vector3 randomPosition = new Vector3(randomX, 0, randomZ)
+         + Instance.spawnPoints[randomSpawnPoint].position;
+        
+        GameObject enemy = Instantiate(Instance.enemyTypes[randomIndex].Prefab, 
+        randomPosition, 
+        Quaternion.identity, parent: Instance.spawnPoints[randomSpawnPoint]);
+        
+        Instance.spawnedEnemies.Add(enemy.GetComponent<Enemy>());
     }
 
     public static void RestartEnemy(Enemy enemy)
