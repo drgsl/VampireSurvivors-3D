@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4218909342033405180}
   - component: {fileID: 4218909342033405183}
   - component: {fileID: 849983193566264767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Apple
   m_TagString: DamagePlayer
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218909343252167349}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4343626637206511364}
   - component: {fileID: 3108382710442768125}
   - component: {fileID: 4655406646414915930}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}

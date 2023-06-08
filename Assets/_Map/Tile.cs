@@ -26,6 +26,8 @@ public class Tile : MonoBehaviour
     public void OnCollisionEnter(Collision other){
         if(other.gameObject.CompareTag("Player")){
             MapManager.updateTilePositions(this);
+
+            // EnemySpawnPointsManager.updateSpawnPositions(this.transform);
         }
     }
 }
