@@ -21,5 +21,5 @@ MonoBehaviour:
   MaxHealth: 100
   DropChance: 0
   XP_Drops:
-  - {fileID: 11400000, guid: d84e98e8fd667f349bb3e7e7a0db4957, type: 2}
+  - {fileID: 11400000, guid: f38bbc6722c7efb4fb664d3ba2b6da39, type: 2}
   HalfPiece: {fileID: 0}
